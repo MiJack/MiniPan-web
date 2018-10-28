@@ -3,8 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <title>MiniPan登录页</title>
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <style>
+        .main-container {
+            position: absolute;
+            border: darkgrey 2px solid;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 50px;
+        }
+
+        .form-label {
+            display: inline-block;
+            font-size: 24px;
+            line-height: 24px;
+            width: 140px;
+        }
+
+        .form-input {
+            display: inline-block;
+            font-size: 24px;
+            line-height: 24px;
+            width: 140px;
+        }
+
+        .form-item {
+            padding: 20px 20px;
+        }
+        .center{
+            margin: auto;
+            font-weight: 600;
+        }
+    </style>
 </head>
 <body>
-<h1>MiniPan登录页</h1>
+<div class="main-container">
+    <h1 class="center">MiniPan登录页</h1>
+
+    <form action='/api/user/login' class="center" method="post">
+        <div class="form-item">
+            <label class="form-label"> 用户名</label> <input class="form-input" name="user-name"/><br/>
+        </div>
+        <div class="form-item">
+            <label class="form-label"> 密码</label> <input class="form-input" name="password"/><br/>
+        </div>
+        <div class="form-item float-right">
+            <a href="user/forget-password.html">
+                <button type="submit" class="form-input">忘记密码</button>
+            </a>
+            <button type="submit" class="form-input">登录</button>
+        </div>
+    </form>
+</div>
 </body>
 </html>
